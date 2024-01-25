@@ -1,0 +1,18 @@
+counter=0
+findAnswer=False
+for chicken in range(0,36):
+    # 腿不能被4整除，所以鸡一定是奇数
+    if(chicken%2==0): continue
+    for rabbit in range(0,36):
+        counter+=1
+        if (chicken+rabbit==35)and(2*chicken+4*rabbit==94):
+          print("鸡有{}只，兔子有{}只".format(chicken,rabbit))
+          findAnswer=True;
+          break 
+        if(chicken+rabbit>=35):
+          break
+        if(2*chicken+4*rabbit>=94):
+          break
+    if findAnswer:
+      break
+print("execute times:",counter)
